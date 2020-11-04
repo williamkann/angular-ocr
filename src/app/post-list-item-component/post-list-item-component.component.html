@@ -1,0 +1,9 @@
+<div [ngClass]="{'list-group-item': true,
+    'list-group-item-success': post.loveIts,
+    'list-group-item-danger': getDontLoveIts()}">
+    <h1 class="h1">{{post.title}}</h1>
+    <p>{{post.date | date }}</p>
+    <p> {{post.content}} </p>
+    <button class="btn btn-success" (click)="addLoveIts()">Love it ! ({{post.loveIts}})</button>
+    <button class="btn btn-danger" (click)="removeLoveIts()">Don't love it ! ({{post.loveIts}})</button>
+</div>
