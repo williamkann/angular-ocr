@@ -16,6 +16,7 @@ import AuthService from './services/auth.service';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 import { ErrorRedirectionComponent } from './error-redirection/error-redirection.component';
 import AuthGuardService from './services/auth-guard.service';
+import { EditAppareilComponentComponent } from './edit-appareil-component/edit-appareil-component.component';
 
 // For routing creation:
 const appRoutes: Routes = [
@@ -41,6 +42,11 @@ const appRoutes: Routes = [
   {
     path: 'not-found',
     component: ErrorRedirectionComponent
+  },
+  {
+    path: 'edit',
+    canActivate: [AuthGuardService],
+    component: EditAppareilComponentComponent
   }, 
   {
     path: '**',
@@ -58,7 +64,8 @@ const appRoutes: Routes = [
     AuthComponent,
     AppareilViewComponent,
     SingleAppareilComponent,
-    ErrorRedirectionComponent
+    ErrorRedirectionComponent,
+    EditAppareilComponentComponent
   ],
   imports: [
     BrowserModule,
