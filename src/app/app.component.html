@@ -1,4 +1,15 @@
-<div class="container">
-  <h1 class="h1">Posts</h1>
-  <app-post-list-component [postList]="posts"></app-post-list-component>
-</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/appareils">Appareils</a></li>
+      <li><a routerLink="/auth">Authentification</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
